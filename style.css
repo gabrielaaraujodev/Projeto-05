@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Entender melhor o funcionamento*/
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #D9D9D9;
+}
+
+body::before {
+  content: '';
+  width: 100%;
+  height: 368px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #121214;
+}
+
+div#page {
+  width: 736px;
+  margin: auto;
+}
+
+header {
+  width: 319px;
+  margin-top: 80px;
+}
+
+header h1 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 24px;
+  line-height: 42px;
+  color: white;
+}
+
+header p {
+  color: #42D3FF;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+form {  
+  border-radius: 8px 8px 0px 0px;
+  background: #FAFAFC;
+  margin-top: 42px;
+  padding: 64px; /* Perguntar porque quando aplicado esse Padding, só se aplicou na esquerda e em cima ! */
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  border-bottom: 1px solid #D6D6D6;
+}
+
+fieldset {
+  border: none;
+}
+
+.fieldset-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+fieldset legend {
+  font-family: 'Archivo', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  width: 100%;
+  line-height: 34px;
+  border-bottom: 1px solid #E6E6F0;
+  padding-bottom: 16px;
+}
+
+/* Perguntar porque não funcionou o '.input-wrapper com flex e display:flex direction column */
+#event-title {
+  display: block;
+  width: 100%;
+}
+
+#event-url {
+  display: block;
+  width: 100%;
+}
+
+#event-whatsapp {
+  display: block;
+  width: 100%;
+}
+
+#event-info {
+  display: block;
+  width: 100%;
+}
+
+#event-category {
+  display: block;
+  width: 100%;
+}
+
+.input-wrapper label, .checkbox-wrapper label  {
+  font-size: 14px;
+  line-height: 24px;
+  color: #4E4958;
+  margin-bottom: 8px;
+}
+
+.input-wrapper label span {
+  color: #545357;
+  font-size: 12px;
+  line-height: 20px;
+  margin-left: 12px;
+}
+
+.input-wrapper input, .input-wrapper textarea, .input-wrapper select {
+  font-family: 'Poppins', sans-serif;
+  color: #545357;
+  font-size: 16px;
+  line-height: 26px;
+  height: 56px;
+  padding: 0 24px;
+  background: #FAFAFC;
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+}
+
+.input-wrapper textarea {
+  padding: 0;
+  height: 168px;
+}
+
+.input-wrapper select {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+
+  /* Padding de 'posição' + 'quantidade' */
+  background-position: right 24px top 50%;
+
+  /* Retira a 'setinha' que fica do lado direito da caixa, pois essa 'setinha' padrão não é editável. */
+  appearance: none;
+}
+
+#event-email {
+  display: block; 
+  width: 100%;
+}
+
+#event-password {
+  display: block; 
+  width: 100%;
+}
+
+.col-3 {
+  display: flex;
+  gap: 20px;
+}
+
+#event-date {
+  width: 312px;
+}
+
+#event-begin {
+  display: block;
+}
+
+#event-end {
+  display: block;
+}
+
+.checkbox-wrapper {
+  position: relative;
+}
+
+.checkbox-wrapper label {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  align-items: center;
+}
+
+/* Este display, causa um problema de acessibilidade devido a navegação no teclado pela tecla 'TAB', pois, como ele foi excluido da tela, a tecla 'TAB' não o seleciona, para ajeitar isso, irá se ajustar através do 'position' */ 
+
+/* RELEMBRANDO: Esse positon faz com que o objeito seja absoluto RELATIVO a uma outra posição que, nessse caso, vai ser estar no '.checkbox-wrapper' */
+
+.checkbox-wrapper input {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+}
+
+.checkbox-wrapper label::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+}
+
+/* Já que ainda não está sendo utilizado JavaScript, está é uma das maneiras de ativar uma 'CheckBox' criada por meio do CSS já que o próprio 'Input' foi oprimido. */
+
+/* 'Vai pegar o 'input' presente no checkbox-wrapper e, quando ele estiver 'checked' (ou seja, for selecionado) ira pegar o que foi construído do 'label::before' (que nesse caso foi a 'caxinha' para ser selecionada e fazer uma ação. */
+
+.checkbox-wrapper input:checked + label::before {
+  background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_2616_23)'%3E%3Cpath d='M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z' fill='%2342D3FF'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2616_23'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+/* Depois de resolvido o problema de acessibilidade mencionado acima, precisa-se saber quano a 'caixa' foi seleciona, pois, apesar de estar sendo, não está dando para fazer, dessa forma, a linha abaixo diz que quando o 'input' do 'checkbox-wrapper' for 'focado', ou seja, estiver em foco (selecionado), vai ser aplicado alguma coisa ao 'label::before' que, neste caso, foi a 'caixinha' criada com CSS */
+.checkbox-wrapper input:focus + label::before{
+  outline: 2px solid black;
+}
+
+footer {
+  background: #f0f0f4;
+  height: 136px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Perguntar porque quando eu coloquei um 'class:button' no input e tentei aplicar as CSS nela aqui não funcionou  */
+
+input.button {
+  font-family: 'Archivo';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  color: #ffffff;
+  background: #04D361;
+  border: none;
+  width: 608px;
+  border-radius: 8px;
+  margin: 40px 64px;
+  padding: 15px 64px;
+}
+
+input.button:hover {
+  background: #019243;
+}
+
+
+/* Aplicando validações nos Input's */
+
+input:invalid {
+  border: 1px solid #fd9f9f;
+}
