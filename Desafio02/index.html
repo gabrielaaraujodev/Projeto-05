@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mentoria²</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header>
+    <h1>AVALIE SUA MENTORIA</h1>
+    <p>Chegou a hora de avaliar o seu mentor. Bora lá?</p>
+    <img src="image/balloon.png" alt="Balão laranja com 5 estrelas sendo 3 preenchidas de branco">
+  </header>
+
+  <div class="page">
+    <h1>INFORMAÇÕES PESSOAIS</h1>
+    <form>
+      <fieldset>
+        <div class="all-form">
+          <div id="customize-name" class="customize">
+            <label for="name">Nome</label>
+            <input type="text" id="name">
+          </div>
+
+          <div id="customize-surname" class="customize">
+            <label for="surname">Sobrenome</label>
+            <input type="text" id="surname">
+          </div>
+
+          <div class="costumize-email">
+            <label for="e-mail">Email<span>(digite um email válido)</span></label>
+            <input type="email" id="e-mail">
+          </div>
+          
+          <div class="costumize-title">
+            <p>INFORMAÇÕES DO MENTOR</p>
+          </div>
+
+          <div class="customize-mentor">
+            <label for="mentor-name">Selecione quem foi o seu mentor</label>
+            <input type="text" id="mentor-name">
+          </div>
+
+          <div class="customize-feedback">
+            <p>Feedback sobre o mentor</p>
+            <textarea  id="mentor-feedback"></textarea>
+          </div>
+
+          <div class="customize-doubts">
+            <input type="checkbox" id="doubts">
+            <label for="doubts">Todas as minhas dúvidas foram esclarecidas durante a mentoria</label>
+          </div>
+
+          <div class="costumize-title">
+            <p>Agendando PRÓXIMA MENTORIA</p>
+          </div>
+
+          <div id="customize-date" class="customize">
+            <label for="date">Data</label>
+            <input type="date" id="date">
+          </div>
+
+          <div id="customize-bhour" class="customize">
+            <label for="bhour">Das</label>
+            <input type="time" id="bhour">
+          </div>
+
+          <div id="customize-lhour" class="customize">
+            <label for="lhour">Até</label>
+            <input type="time" id="lhour">
+          </div>
+
+          <div class="customize-button">
+            <input type="submit" value="SALVAR">
+          </div>
+
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</body>
+</html>
