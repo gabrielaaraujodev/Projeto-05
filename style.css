@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Entender melhor o funcionamento*/
+  box-sizing: border-box; /* Entender melhor o funcionamento (RESOLVIDO)*/
 }
 
 body {
@@ -49,7 +49,7 @@ form {
   border-radius: 8px 8px 0px 0px;
   background: #FAFAFC;
   margin-top: 42px;
-  padding: 64px; /* Perguntar porque quando aplicado esse Padding, só se aplicou na esquerda e em cima ! */
+  padding: 64px;
   min-height: 300px;
 
   display: flex;
@@ -79,30 +79,10 @@ fieldset legend {
   padding-bottom: 16px;
 }
 
-/* Perguntar porque não funcionou o '.input-wrapper com flex e display:flex direction column */
-#event-title {
-  display: block;
-  width: 100%;
-}
-
-#event-url {
-  display: block;
-  width: 100%;
-}
-
-#event-whatsapp {
-  display: block;
-  width: 100%;
-}
-
-#event-info {
-  display: block;
-  width: 100%;
-}
-
-#event-category {
-  display: block;
-  width: 100%;
+/* Perguntar porque não funcionou o '.input-wrapper com flex e display:flex direction column (RESOLVIDO) */
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .input-wrapper label, .checkbox-wrapper label  {
@@ -226,9 +206,8 @@ footer {
   border-radius: 0 0 8px 8px;
 }
 
-/* Perguntar porque quando eu coloquei um 'class:button' no input e tentei aplicar as CSS nela aqui não funcionou  */
-
-input.button {
+/* Perguntar porque quando eu coloquei um 'class:button' no input e tentei aplicar as CSS nela aqui não funcionou */
+.button {
   font-family: 'Archivo';
   font-weight: 600;
   font-size: 16px;
